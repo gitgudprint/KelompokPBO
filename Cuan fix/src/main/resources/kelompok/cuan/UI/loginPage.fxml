@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefWidth="647.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="408.0" prefWidth="200.0" style="-fx-background-color: #046DB5;">
+         <children>
+            <Label fx:id="cuan" layoutX="86.0" layoutY="182.0" scaleX="4.0" scaleY="4.0" scaleZ="4.0" text="Cuan" textFill="WHITE" />
+            <Label fx:id="quote" layoutX="14.0" layoutY="225.0" text="Your Helper For Money Problem" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <TextField fx:id="username" layoutX="375.0" layoutY="179.0" onAction="#useirdFIeldOnAction" text="Username" />
+      <PasswordField fx:id="password" layoutX="375.0" layoutY="222.0" onAction="#pwIdFIeldOnAction" onMouseClicked="#PasswordField" text="Password" />
+      <Button fx:id="login" layoutX="424.0" layoutY="269.0" mnemonicParsing="false" onAction="#loginIdButtonOnAction" text="Login" />
+      <Button fx:id="forgot" layoutX="402.0" layoutY="310.0" mnemonicParsing="false" onAction="#forgotIdButtonOnAction" style="-fx-background-color: #FFFFFF;" text="Lupa Password" textFill="#3498db" />
+      <ImageView fx:id="icon" fitHeight="166.0" fitWidth="149.0" layoutX="381.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Logo/Dollar_money_logo_template__1_-removebg-preview.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
