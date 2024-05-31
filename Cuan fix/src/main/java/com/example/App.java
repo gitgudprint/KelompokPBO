@@ -11,12 +11,16 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
+    public boolean Resize = false;
+
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("loginPage"), 640, 480);
+        scene = new Scene(loadFXML("loginPage"), 640, 408);
+        stage.setResizable(Resize);
         stage.setScene(scene);
         stage.show();
+
     }
 
     static void setRoot(String fxml) throws IOException {

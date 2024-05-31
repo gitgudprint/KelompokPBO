@@ -18,5 +18,6 @@
       <PasswordField fx:id="password" layoutX="375.0" layoutY="222.0" text="Password" />
       <Button fx:id="login" layoutX="424.0" layoutY="269.0" mnemonicParsing="false" onAction="#switchToSecondary" text="Login" />
       <Button fx:id="forgot" layoutX="402.0" layoutY="310.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="Lupa Password" textFill="#3498db" />
+      <Button fx:id="toregister" layoutX="200.0" layoutY="369.0" mnemonicParsing="false" onAction="#toreg" text="Register" />
    </children>
 </AnchorPane>

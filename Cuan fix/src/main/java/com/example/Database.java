@@ -35,4 +35,22 @@ public class Database {
             return false;
         }
     }
+
+    public boolean registerUser(String username, String password) {
+        try (Connection connection = DriverManager.getConnection(url, user, pass)) {
+            String query = "INSERT INTO data (username, password) VALUES (?,?)";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, username);
+            statement.setString(2, password);
+
+            int rowsAffected = statement.executeUpdate();
+
+            // If a row is inserted, the registration is successful
+            return rowsAffected > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
