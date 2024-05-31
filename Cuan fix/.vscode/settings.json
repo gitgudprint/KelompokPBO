@@ -1,0 +1,13 @@
+{
+    "java.configuration.updateBuildConfiguration": "interactive",
+
+    "java.project.referencedLibraries": [
+        {
+            "systemLibrary": {
+                "name": "mysql-connector-java",
+                "sources": "C:/SQL/mysql-connector-j-8.4.0",
+                "javadoc": "C:/SQL/mysql-connector-j-8.4.0.jar"
+            }
+        }
+    ]
+}

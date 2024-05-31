@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="459.0" prefWidth="396.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.landingController">
+   <children>
+      <TextField fx:id="cashInput" layoutX="114.0" layoutY="56.0" prefHeight="25.0" prefWidth="186.0" />
+      <RadioButton fx:id="pemasukanButton" layoutX="157.0" layoutY="109.0" mnemonicParsing="false" onAction="#pemasukan" text="Pemasukan" />
+      <RadioButton fx:id="pengeluaranButton" layoutX="158.0" layoutY="135.0" mnemonicParsing="false" onAction="#pengeluaran" text="Pengeluaran" />
+      <RadioButton fx:id="hutangButton" layoutX="158.0" layoutY="161.0" mnemonicParsing="false" onAction="#hutang" text="Hutang" />
+      <DatePicker fx:id="DateButtonId" layoutX="114.0" layoutY="231.0" onAction="#date" promptText="date" />
+      <Button fx:id="saveButton" layoutX="172.0" layoutY="365.0" mnemonicParsing="false" onAction="#menyimpanData" text="Simpan" />
+      <MenuButton fx:id="transaksiMenu" mnemonicParsing="false" onAction="#pindahHalaman" text="MenuButton">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </MenuButton>
+   </children>
+</AnchorPane>
