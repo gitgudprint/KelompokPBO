@@ -11,13 +11,13 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
-    public boolean Resize = false;
+    
 
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("loginPage"), 640, 408);
-        stage.setResizable(Resize);
+        scene = new Scene(loadFXML("loginPage"), 600, 445);
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
 

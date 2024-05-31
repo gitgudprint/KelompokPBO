@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dashController">
+   <children>
+      <TreeTableView fx:id="transaksiTable" layoutX="168.0" layoutY="-2.0" prefHeight="503.0" prefWidth="500.0">
+        <columns>
+          <TreeTableColumn fx:id="buyingTable" prefWidth="260.0" text="Barang yang dibeli" />
+          <TreeTableColumn fx:id="nominalTable" prefWidth="239.0" text="Nominal" />
+        </columns>
+      </TreeTableView>
+      <AnchorPane layoutY="-8.0" prefHeight="503.0" prefWidth="169.0" style="-fx-background-color: #2C3E50;">
+         <children>
+            <Line endX="88.0" layoutX="65.0" layoutY="159.0" startX="-43.0" />
+            <Label layoutX="72.0" layoutY="14.0" text="Menu" textFill="WHITE" />
+            <ImageView fx:id="PROFILE" fitHeight="106.0" fitWidth="150.0" layoutX="35.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Logo/profile-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="33.0" layoutY="177.0" text="Sisa Saldo Anda: RP." textFill="#27ae60" />
+            <Label fx:id="saldo" layoutX="143.0" layoutY="177.0" text="0" textFill="#27ae60" />
+            <ImageView accessibleRole="BUTTON" fitHeight="132.0" fitWidth="118.0" layoutX="31.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Logo/help-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="CALENDAR" fitHeight="110.0" fitWidth="120.0" layoutX="35.0" layoutY="276.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Logo/Kalender-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="MONEY" fitHeight="139.0" fitWidth="132.0" layoutX="24.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Logo/Dollar-remove.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <Button fx:id="HAH" layoutX="51.0" layoutY="369.0" mnemonicParsing="false" onAction="#helpmenu" opacity="0.0" prefHeight="66.0" prefWidth="77.0" text="help">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="planningbutton" layoutX="60.0" layoutY="294.0" mnemonicParsing="false" onAction="#spendmenu" opacity="0.0" prefHeight="66.0" prefWidth="60.0" text="SpendStrategy">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="accountbutton" layoutX="58.0" layoutY="118.0" mnemonicParsing="false" onAction="#accountmenu" style="-fx-background-color: #2C3E50;" text="Account" textFill="#0780f8">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="depobutton" layoutX="55.0" layoutY="220.0" mnemonicParsing="false" onAction="#depomenu" opacity="0.0" prefHeight="51.0" prefWidth="67.0" text="+">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

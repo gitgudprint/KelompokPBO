@@ -3,7 +3,7 @@ module com.example {
     requires javafx.fxml;
     requires transitive javafx.graphics;
     requires transitive java.sql;
-    //requires mysql.connector.java;//
+    requires javafx.base;
 
 
     opens com.example to javafx.fxml;

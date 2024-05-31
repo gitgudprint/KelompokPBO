@@ -5,75 +5,56 @@ import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-public class PrimaryController {
+public class PrimaryController extends Authenticate {
+    public PrimaryController(String url, String user, String pass) {
+        super(url, user, pass);
+    }
+
+    public PrimaryController() {
+        this("jdbc:mysql://localhost:3306/db", "root", "");
+    }
 
     @FXML
-    private Label cuan;
-
+    private ImageView Imagelogin;
+   
     @FXML
     private Button forgot;
 
     @FXML
     private Button login;
-    
-    @FXML
-    private Button toregister;
 
     @FXML
-    private PasswordField password;
+    private PasswordField PASS;
 
     @FXML
     private Label quote;
 
     @FXML
-    private TextField username;
-
-    private Database database;
-
-    public PrimaryController() {
-        // No-argument constructor
-    }
-
-    public void setDatabase(String url, String user, String pass) {
-        this.database = new Database(url, user, pass);
-    }
-
-    public String getUsername() {
-        return username.getText();
-    }
-
-    public String getPassword() {
-        return password.getText();
-    }
+    private Button toregister;
 
     @FXML
+    private TextField USER;
+
+    @Override
+    public boolean checkLogin(String username, String password) {
+        return executeQuery("SELECT * FROM data WHERE username =? AND password =?", username, password);
+    }
+    @FXML
     private void switchToSecondary(ActionEvent event) throws IOException {
-        Database database = new Database("jdbc:mysql://localhost:3306/db", "root", "");
-        if (database.checkLogin(getUsername(), getPassword())) {
-            // Create a new stage for the dashboard window
-            Stage dashboardStage = new Stage();
-        
-            // Load the dashboard FXML file
-            FXMLLoader loader = new FXMLLoader(App.class.getResource("dashboard.fxml"));
-            Parent root = loader.load();
-        
-            // Set the scene and show the dashboard window
-            Scene scene = new Scene(root);
-            dashboardStage.setScene(scene);
-            dashboardStage.show();
-        
-            // Close the current login window
-            Stage stage = (Stage) login.getScene().getWindow();
-            stage.close();
+        String username = USER.getText();
+        String password = PASS.getText();
+        if (checkLogin(username, password)){
+            Window show = new Window();
+            show.closeWindow((Stage) login.getScene().getWindow());
+            show.showWindow("dashboard1.fxml", new Stage());
+            
         } else {
             ErrorPopup.showError("Invalid username or password");
         }
@@ -81,21 +62,9 @@ public class PrimaryController {
 
     @FXML
     void toreg(ActionEvent event) throws IOException {
-        // Create a new stage for the registration window
-        Stage registerStage = new Stage();
-    
-        // Load the Register FXML file
-        FXMLLoader loader = new FXMLLoader(App.class.getResource("Register.fxml"));
-        Parent root = loader.load();
-    
-        // Set the scene and show the registration window
-        Scene scene = new Scene(root);
-        registerStage.setScene(scene);
-        registerStage.show();
-    
-        // Close the current login window
-        Stage stage = (Stage) toregister.getScene().getWindow();
-        stage.close();
+        Window show = new Window();
+        show.closeWindow((Stage) toregister.getScene().getWindow());
+        show.showWindow("Register.fxml", new Stage());
     }
 
 }

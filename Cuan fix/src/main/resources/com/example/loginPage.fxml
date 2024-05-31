@@ -4,20 +4,26 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="408.0" prefWidth="647.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PrimaryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="578.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PrimaryController">
    <children>
-      <AnchorPane prefHeight="408.0" prefWidth="200.0" style="-fx-background-color: #046DB5;">
+      <AnchorPane prefHeight="448.0" prefWidth="95.0" style="-fx-background-color: #046DB5;">
          <children>
-            <Label fx:id="cuan" layoutX="86.0" layoutY="182.0" scaleX="4.0" scaleY="4.0" scaleZ="4.0" text="Cuan" textFill="WHITE" />
-            <Label fx:id="quote" layoutX="14.0" layoutY="225.0" text="Your Helper For Money Problem" textFill="WHITE" />
+            <Label fx:id="quote" layoutX="14.0" layoutY="425.0" text="Pre-Alpha" textFill="WHITE" />
          </children>
       </AnchorPane>
-      <TextField fx:id="username" layoutX="375.0" layoutY="179.0" text="Username" />
-      <PasswordField fx:id="password" layoutX="375.0" layoutY="222.0" text="Password" />
-      <Button fx:id="login" layoutX="424.0" layoutY="269.0" mnemonicParsing="false" onAction="#switchToSecondary" text="Login" />
-      <Button fx:id="forgot" layoutX="402.0" layoutY="310.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="Lupa Password" textFill="#3498db" />
-      <Button fx:id="toregister" layoutX="200.0" layoutY="369.0" mnemonicParsing="false" onAction="#toreg" text="Register" />
+      <TextField fx:id="USER" layoutX="252.0" layoutY="242.0" promptText="Username" />
+      <PasswordField fx:id="PASS" layoutX="252.0" layoutY="285.0" promptText="Password" />
+      <Button fx:id="login" layoutX="301.0" layoutY="332.0" mnemonicParsing="false" onAction="#switchToSecondary" text="Login" />
+      <Button fx:id="forgot" layoutX="279.0" layoutY="373.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="Lupa Password" textFill="#3498db" />
+      <Button fx:id="toregister" layoutX="479.0" layoutY="408.0" mnemonicParsing="false" onAction="#toreg" style="-fx-background-color: transparent;" text="Daftar Disini!" textFill="#3498db" />
+      <ImageView fx:id="Imagelogin" fitHeight="255.0" fitWidth="275.0" layoutX="199.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Logo/Dollar%20money%20logo%20template.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

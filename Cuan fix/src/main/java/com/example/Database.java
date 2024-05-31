@@ -1,53 +1,28 @@
 package com.example;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Database {
-
-    private String url;
-    private String user;
-    private String pass;
-
+public class Database extends DatabaseConnection {
     public Database(String url, String user, String pass) {
-        this.url = url;
-        this.user = user;
-        this.pass = pass;
+        super(url, user, pass); // Call the constructor of DatabaseConnection
     }
 
-    public boolean checkLogin(String username, String password) {
-        try (Connection connection = DriverManager.getConnection(url, user, pass)) {
-            String query = "SELECT * FROM data WHERE username =? AND password =?";
-            PreparedStatement statement = connection.prepareStatement(query);
+    protected boolean executeQuery(String query, String username, String password) {
+        try (Connection conn = getConnection();
+             PreparedStatement statement = conn.prepareStatement(query)) {
             statement.setString(1, username);
             statement.setString(2, password);
 
-            ResultSet resultSet = statement.executeQuery();
-
-            // If a record is found, the login is successful
-            return resultSet.next();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
-    public boolean registerUser(String username, String password) {
-        try (Connection connection = DriverManager.getConnection(url, user, pass)) {
-            String query = "INSERT INTO data (username, password) VALUES (?,?)";
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, username);
-            statement.setString(2, password);
-
-            int rowsAffected = statement.executeUpdate();
-
-            // If a row is inserted, the registration is successful
-            return rowsAffected > 0;
-
+            if (query.startsWith("SELECT")) {
+                ResultSet resultSet = statement.executeQuery();
+                return resultSet.next();
+            } else {
+                int rowsAffected = statement.executeUpdate();
+                return rowsAffected > 0;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
